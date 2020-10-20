@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AllForOne</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="btnLogin">Login</string>
+    <string name="btnContinue">Try it!</string>
+    <string name="btnSign">Sign In</string>
+    <string name="logo">logo image</string>
+</resources>
