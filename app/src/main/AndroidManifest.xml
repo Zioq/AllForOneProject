@@ -19,7 +19,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FindShelters">
-        <activity android:name=".SignIn"></activity>
+        <activity android:name=".FindLifeGuard"></activity>
+        <activity android:name=".FindFood" />
+        <activity android:name=".PanicButtonAction" />
+        <activity android:name=".FindHospital" />
+        <activity android:name=".FindBcHousing" />
+        <activity android:name=".FindShelter" />
+        <activity android:name=".Navigation" />
+        <activity android:name=".SignIn" />
         <activity android:name=".Login" />
         <activity android:name=".StartScreen">
             <intent-filter>

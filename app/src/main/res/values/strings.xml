@@ -5,4 +5,11 @@
     <string name="btnContinue">Try it!</string>
     <string name="btnSign">Sign In</string>
     <string name="logo">logo image</string>
+    <string name="textNavi">test for Navi</string>
+    <string name="title_shelter">This is Shelter Page</string>
+    <string name="title_bchousing">This is bcHousing page</string>
+    <string name="title_hosipital">This is Hospital Page</string>
+    <string name="title_panic">This is panic button page</string>
+    <string name="title_food">This is Food Page</string>
+    <string name="title_LifeGuard">This is life guard page</string>
 </resources>
