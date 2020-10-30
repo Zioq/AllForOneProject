@@ -65,11 +65,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             //When permission denied, request permission
             ActivityCompat.requestPermissions(MapsActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
         }
+        //getNearbyHospitals(latitude, longitude);
+
     }
 
     private void getCurrentLocation() {
         //Initialize task location
         Task<Location> task = client.getLastLocation();
+
+        String hospital = "hospital";
+        Object transferData[] = new Object[2];
+        GetNearbyPlaces getNearbyPlaces = new GetNearbyPlaces();
+
+        List<Address> addressList = null;
+        MarkerOptions userMarkerOptions = new MarkerOptions();
+        Geocoder geocoder = new Geocoder(this);
+
         task.addOnSuccessListener(new OnSuccessListener<Location>() {
             @Override
             public void onSuccess(Location location) {
@@ -89,11 +100,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             googleMap.addMarker(options);
                             latitude = location.getLatitude();
                             longitude = location.getLongitude();
+
+
+                           //mMap.clear();
+                            String url = getUrl(latitude, longitude, hospital);
+                            transferData[0] = mMap;
+                            transferData[1] = url;
+                            getNearbyPlaces.execute(transferData);
+//                            Toast.makeText(this, "Searching for nearby hospitals", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(this, "Showing nearby hospitals", Toast.LENGTH_SHORT).show();;
                         }
                     });
                 }
             }
         });
+
     }
 
     @Override
@@ -114,81 +135,87 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //LatLng sydney = new LatLng(-34, 151);
         //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         //mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+
     }
 
-    public void onClick(View v){
-        String hospital = "hospital", shelter = "shelter", restaurants = "restaurant";
-        Object transferData[] = new Object[2];
-        GetNearbyPlaces getNearbyPlaces = new GetNearbyPlaces();
+    public void getNearbyHospitals(double lat, double lon){
 
-        switch ((v.getId())){
-            case R.id.search_button:
-                EditText addressField = (EditText) findViewById(R.id.location_search);
-                String address = addressField.getText().toString();//getting the text from the text field
-
-                List<Address> addressList = null;
-                MarkerOptions userMarkerOptions = new MarkerOptions();
-
-                if(!TextUtils.isEmpty(address)){
-                    Geocoder geocoder = new Geocoder(this);
-
-                    try {
-                        addressList = geocoder.getFromLocationName(address, 6);
-                        if(addressList != null){
-                            for(int i = 0; i < addressList.size(); i++){
-                                Address userAddress = addressList.get(i);
-                                LatLng latLng = new LatLng(userAddress.getLatitude(), userAddress.getLongitude());
-
-                                userMarkerOptions.position(latLng);
-                                userMarkerOptions.title(address);
-                                userMarkerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE));
-
-                                mMap.addMarker(userMarkerOptions);
-                                mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-                                mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
-                            }
-                        } else {
-                            Toast.makeText(this, "Location not found...", Toast.LENGTH_SHORT).show();
-                        }
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }else{
-                    Toast.makeText(this, "Please write any location", Toast.LENGTH_LONG);
-                }
-                break;
-            case R.id.hospitals_nearby:
-                mMap.clear();
-                String url = getUrl(latitude, longitude, hospital);
-                transferData[0] = mMap;
-                transferData[1] = url;
-                getNearbyPlaces.execute(transferData);
-                Toast.makeText(this, "Searching for nearby hospitals", Toast.LENGTH_SHORT).show();
-                Toast.makeText(this, "Showing nearby hospitals", Toast.LENGTH_SHORT).show();;
-                break;
-
-            case R.id.shelters_nearby:
-                mMap.clear();
-                url = getUrl(latitude, longitude, shelter);
-                transferData[0] = mMap;
-                transferData[1] = url;
-                getNearbyPlaces.execute(transferData);
-                Toast.makeText(this, "Searching for nearby shelters", Toast.LENGTH_SHORT).show();
-                Toast.makeText(this, "Showing nearby shelters", Toast.LENGTH_SHORT).show();;
-                break;
-
-            case R.id.restaurant_nearby:
-                mMap.clear();
-                url = getUrl(latitude, longitude, restaurants);
-                transferData[0] = mMap;
-                transferData[1] = url;
-                getNearbyPlaces.execute(transferData);
-                Toast.makeText(this, "Searching for nearby restaurants", Toast.LENGTH_SHORT).show();
-                Toast.makeText(this, "Showing nearby restaurants", Toast.LENGTH_SHORT).show();;
-                break;
-        }
     }
+
+//    public void onClick(View v){
+//        String hospital = "hospital", shelter = "shelter", restaurants = "restaurant";
+//        Object transferData[] = new Object[2];
+//        GetNearbyPlaces getNearbyPlaces = new GetNearbyPlaces();
+//
+//        switch ((v.getId())){
+//            case R.id.search_button:
+//                EditText addressField = (EditText) findViewById(R.id.location_search);
+//                String address = addressField.getText().toString();//getting the text from the text field
+//
+//                List<Address> addressList = null;
+//                MarkerOptions userMarkerOptions = new MarkerOptions();
+//
+//                if(!TextUtils.isEmpty(address)){
+//                    Geocoder geocoder = new Geocoder(this);
+//
+//                    try {
+//                        addressList = geocoder.getFromLocationName(address, 6);
+//                        if(addressList != null){
+//                            for(int i = 0; i < addressList.size(); i++){
+//                                Address userAddress = addressList.get(i);
+//                                LatLng latLng = new LatLng(userAddress.getLatitude(), userAddress.getLongitude());
+//
+//                                userMarkerOptions.position(latLng);
+//                                userMarkerOptions.title(address);
+//                                userMarkerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE));
+//
+//                                mMap.addMarker(userMarkerOptions);
+//                                mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+//                                mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+//                            }
+//                        } else {
+//                            Toast.makeText(this, "Location not found...", Toast.LENGTH_SHORT).show();
+//                        }
+//
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }else{
+//                    Toast.makeText(this, "Please write any location", Toast.LENGTH_LONG);
+//                }
+//                break;*/
+//            case R.id.hospitals_nearby:
+//                mMap.clear();
+//                String url = getUrl(latitude, longitude, hospital);
+//                transferData[0] = mMap;
+//                transferData[1] = url;
+//                getNearbyPlaces.execute(transferData);
+//                Toast.makeText(this, "Searching for nearby hospitals", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Showing nearby hospitals", Toast.LENGTH_SHORT).show();;
+//                break;
+//
+//            case R.id.shelters_nearby:
+//                mMap.clear();
+//                url = getUrl(latitude, longitude, shelter);
+//                transferData[0] = mMap;
+//                transferData[1] = url;
+//                getNearbyPlaces.execute(transferData);
+//                Toast.makeText(this, "Searching for nearby shelters", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Showing nearby shelters", Toast.LENGTH_SHORT).show();;
+//                break;
+//
+//            case R.id.restaurant_nearby:
+//                mMap.clear();
+//                url = getUrl(latitude, longitude, restaurants);
+//                transferData[0] = mMap;
+//                transferData[1] = url;
+//                getNearbyPlaces.execute(transferData);
+//                Toast.makeText(this, "Searching for nearby restaurants", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Showing nearby restaurants", Toast.LENGTH_SHORT).show();;
+//                break;
+//        }
+//    }
     private String getUrl(double latitude, double longitude, String nearbyPlace) {
         StringBuilder googleURL = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
         googleURL.append("location=" + latitude + "," + longitude);
