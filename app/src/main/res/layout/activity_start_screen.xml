@@ -10,7 +10,7 @@
         android:id="@+id/logo"
         android:layout_width="241dp"
         android:layout_height="285dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:contentDescription="@string/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,9 +19,8 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_width="185dp"
+        android:layout_height="60dp"
         android:text="@string/btnLogin"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,33 +29,35 @@
 
     <Button
         android:id="@+id/btnSignIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
         android:layout_marginTop="16dp"
         android:text="@string/btnSign"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
+        app:layout_constraintStart_toStartOf="@+id/btnLogin"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
     <Button
         android:id="@+id/btnContinue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
         android:layout_marginTop="16dp"
         android:text="@string/btnContinue"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnSignIn"
+        app:layout_constraintStart_toStartOf="@+id/btnSignIn"
         app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
 
     <Button
         android:id="@+id/btnNavi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_width="183dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="16dp"
         android:text="@string/textNavi"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnContinue"
+        app:layout_constraintStart_toStartOf="@+id/btnContinue"
         app:layout_constraintTop_toBottomOf="@+id/btnContinue" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
