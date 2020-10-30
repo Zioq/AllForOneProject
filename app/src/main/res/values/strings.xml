@@ -12,4 +12,10 @@
     <string name="title_panic">This is panic button page</string>
     <string name="title_food">This is Food Page</string>
     <string name="title_LifeGuard">This is life guard page</string>
+    <string name="txtSign">New to All For One? Join us with your information!</string>
+    <string name="txtId">Enter Your Id:</string>
+    <string name="txtPw">Enter Your Password:</string>
+    <string name="btnJoin">Sign_Up Now</string>
+    <string name="btnRegister">Register</string>
+    <string name="txtName">Enter Your Name:</string>
 </resources>
