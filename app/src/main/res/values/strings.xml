@@ -13,9 +13,16 @@
     <string name="title_food">This is Food Page</string>
     <string name="title_LifeGuard">This is life guard page</string>
     <string name="txtSign">New to All For One? Join us with your information!</string>
-    <string name="txtId">Enter Your Id:</string>
-    <string name="txtPw">Enter Your Password:</string>
     <string name="btnJoin">Sign_Up Now</string>
     <string name="btnRegister">Register</string>
-    <string name="txtName">Enter Your Name:</string>
+    <string name="img_description_take_our_hand">Take our hand</string>
+    <string name="sign_in_title">Id and Password should more than 6 characters</string>
+    <string name="txt_Name">User Name</string>
+    <string name="txt_User_Id">User Id</string>
+    <string name="txt_password">Password</string>
+    <string name="txt_re_password">Re-Password</string>
+    <string name="hint_Name">Enter your Name</string>
+    <string name="hint_User_Id">Enter your ID</string>
+    <string name="hint_Password">Enter your Password</string>
+    <string name="hint_Re_Password">Re-enter your Password</string>
 </resources>
