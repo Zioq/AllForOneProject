@@ -7,8 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import java.time.temporal.ValueRange;
-
 public class Navigation extends AppCompatActivity {
 
     CardView shelter;
@@ -71,7 +69,7 @@ public class Navigation extends AppCompatActivity {
         lifeguard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Navigation.this, FindLifeGuard.class));
+                startActivity(new Intent(Navigation.this, LifeGuard.class));
             }
         });
     }

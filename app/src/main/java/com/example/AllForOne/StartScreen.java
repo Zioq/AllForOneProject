@@ -17,7 +17,7 @@ public class StartScreen extends AppCompatActivity {
         //varibles
         Button login = (Button)findViewById(R.id.btnLogin);
         Button sign = (Button)findViewById(R.id.btnSignIn);
-        Button tryIt =findViewById(R.id.btnContinue);
+        //Button tryIt =findViewById(R.id.btnContinue);
         Button navi = (Button) findViewById(R.id.btnNavi);
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -34,12 +34,12 @@ public class StartScreen extends AppCompatActivity {
             }
         });
 
-        tryIt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(StartScreen.this,MapsActivity.class));
-            }
-        });
+//        tryIt.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(StartScreen.this,MapsActivity.class));
+//            }
+//        });
 
         navi.setOnClickListener(new View.OnClickListener() {
             @Override

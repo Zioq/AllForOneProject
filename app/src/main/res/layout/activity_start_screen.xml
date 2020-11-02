@@ -39,25 +39,14 @@
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
     <Button
-        android:id="@+id/btnContinue"
-        android:layout_width="0dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/btnContinue"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/btnSignIn"
-        app:layout_constraintStart_toStartOf="@+id/btnSignIn"
-        app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
-
-    <Button
         android:id="@+id/btnNavi"
         android:layout_width="183dp"
         android:layout_height="59dp"
         android:layout_marginTop="16dp"
         android:text="@string/textNavi"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/btnContinue"
-        app:layout_constraintStart_toStartOf="@+id/btnContinue"
-        app:layout_constraintTop_toBottomOf="@+id/btnContinue" />
+        app:layout_constraintEnd_toEndOf="@+id/btnSignIn"
+        app:layout_constraintStart_toStartOf="@+id/btnSignIn"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

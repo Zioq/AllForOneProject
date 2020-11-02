@@ -5,7 +5,7 @@
     <string name="btnContinue">Try it!</string>
     <string name="btnSign">Sign In</string>
     <string name="logo">logo image</string>
-    <string name="textNavi">test for Navi</string>
+    <string name="textNavi">Find Help</string>
     <string name="title_shelter">This is Shelter Page</string>
     <string name="title_bchousing">This is bcHousing page</string>
     <string name="title_hosipital">This is Hospital Page</string>
@@ -13,7 +13,7 @@
     <string name="title_food">This is Food Page</string>
     <string name="title_LifeGuard">This is life guard page</string>
     <string name="txtSign">New to All For One? Join us with your information!</string>
-    <string name="btnJoin">Sign_Up Now</string>
+    <string name="btnJoin">Sign up Now</string>
     <string name="btnRegister">Register</string>
     <string name="img_description_take_our_hand">Take our hand</string>
     <string name="sign_in_title">Id and Password should more than 6 characters</string>
@@ -25,4 +25,11 @@
     <string name="hint_User_Id">Enter your ID</string>
     <string name="hint_Password">Enter your Password</string>
     <string name="hint_Re_Password">Re-enter your Password</string>
+    <string name="msgLifeGuard">Dear user, this functionality will allow you to set a timer when you are going to use drugs. The alarm will sounds at a certain time and manages to wake you up.</string>
+    <string name="hint_minutes">Minutes</string>
+    <string name="btnSetAlamar">Set Alarm</string>
+    <string name="timer">00:00</string>
+    <string name="btnStartAlarm">Start Alarm</string>
+    <string name="btnResetAlarm">Reset Alarm</string>
+    <string name="txtLifeGuardTitle">Life Guard App</string>
 </resources>
