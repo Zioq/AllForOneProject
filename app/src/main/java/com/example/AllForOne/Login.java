@@ -34,7 +34,7 @@ public class Login extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Login.this, FindLifeGuard.class));
+                startActivity(new Intent(Login.this, LifeGuard.class));
             }
         });
     }

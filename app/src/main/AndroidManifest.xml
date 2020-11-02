@@ -21,15 +21,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FindShelters">
-        <activity android:name=".FindLifeGuard" />
-        <activity android:name=".FindFood" />
+        <activity android:name=".LifeGuard" android:label="@string/txtLifeGuardTitle"/>
+        <activity android:name=".FindFood" android:label="Find Food"/>
         <activity android:name=".PanicButtonAction" />
         <activity android:name=".FindHospital" />
         <activity android:name=".FindBcHousing" />
         <activity android:name=".FindShelter" />
         <activity android:name=".Navigation" />
-        <activity android:name=".SignIn" />
-        <activity android:name=".Login" />
+        <activity android:name=".SignIn" android:label="@string/btnSign"/>
+        <activity android:name=".Login" android:label="@string/btnLogin"/>
         <activity android:name=".StartScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
