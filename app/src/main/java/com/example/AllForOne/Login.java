@@ -3,6 +3,9 @@ package com.example.AllForOne;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,8 +14,13 @@ import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
 
-    EditText userNameInput;
-    EditText passwordInput;
+    EditText UserIdInput;
+    EditText UserPasswordInput;
+
+    SQLiteDatabase db;
+    SQLiteOpenHelper openHelper;
+    Cursor cursor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,22 +28,32 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
 
-        userNameInput = (EditText) findViewById(R.id.txt_id);
-        passwordInput = (EditText) findViewById(R.id.txt_password);
+        UserIdInput = (EditText) findViewById(R.id.txt_id);
+        UserPasswordInput = (EditText) findViewById(R.id.txt_password);
         Button logIn = (Button)findViewById(R.id.btnLog_in);
+
+        openHelper = new DatabaseHelper(this);
+        db=openHelper.getReadableDatabase();
+
         logIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String userName = userNameInput.getText().toString().trim();
-                String passsword = passwordInput.getText().toString().trim();
 
+                String UserId = UserIdInput.getText().toString();
+                String UserPassword = UserPasswordInput.getText().toString();
+                cursor = db.rawQuery("SELECT * FROM " + DatabaseHelper.TABLE_NAME + " WHERE " +DatabaseHelper.COL_3 + "=? AND " + DatabaseHelper.COL_4+ " =? ", new String[] {UserId,UserPassword});
 
-                    startActivity(new Intent(Login.this, Navigation.class));
+                if(cursor!=null) {
+                    if(cursor.getCount() > 0) {
+                        cursor.moveToNext();
+                        Toast.makeText(getApplicationContext(),"Login Success!",Toast.LENGTH_LONG).show();
 
+                        startActivity(new Intent(Login.this, Navigation.class));
+                    } else {
+                        Toast.makeText(getApplicationContext(),"Check Your ID and Password!",Toast.LENGTH_LONG).show();
+                    }
+                }
                     //Toast.makeText(getApplicationContext(),"Check your Id and Password",Toast.LENGTH_LONG).show();
-
-
-
 
             }
         });
