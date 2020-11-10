@@ -28,6 +28,7 @@
         <activity android:name=".FindBcHousing" />
         <activity android:name=".FindShelter" />
         <activity android:name=".Navigation" />
+        <activity android:name=".DisplayInfoActivity" />
         <activity android:name=".SignIn" android:label="@string/btnSign"/>
         <activity android:name=".Login" android:label="@string/btnLogin"/>
         <activity android:name=".StartScreen">
