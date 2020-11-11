@@ -14,8 +14,20 @@ import java.util.List;
 
 public class GetNearbyPlaces extends AsyncTask<Object, String, String> {
 
-    private String googlePlaceData, url;
+    private String googlePlaceData, url, placeId;
     private GoogleMap mMap;
+
+    protected String[][] uniqueID = new String[200][200];
+
+
+    public String getPlaceId(){
+        return placeId;
+    }
+    public String[][] getUniqueID(){ return uniqueID;}
+
+    public void cleanUniqueID(){
+        uniqueID = new String[200][200];
+    }
 
     @Override
     protected String doInBackground(Object... objects) {
@@ -47,21 +59,22 @@ public class GetNearbyPlaces extends AsyncTask<Object, String, String> {
             HashMap<String, String> googleNearbyPlace = nearbyPlacesList.get(i);
             String nameOfPlace = googleNearbyPlace.get("place_name");
             String vicinity = googleNearbyPlace.get("vicinity");
+            placeId = googleNearbyPlace.get("reference");
             double lat = Double.parseDouble(googleNearbyPlace.get("lat"));
             double lng = Double.parseDouble(googleNearbyPlace.get("lng"));
 
+            String uID = nameOfPlace + " " + vicinity;
 
             LatLng latLng = new LatLng(lat, lng);
 
             markerOptions.position(latLng);
-            markerOptions.title(nameOfPlace + " : " + vicinity);
+            markerOptions.title(nameOfPlace + " " + vicinity);
             markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW));
 
+            uniqueID[i][0] = uID;
+            uniqueID[i][1] = placeId;
+
             mMap.addMarker(markerOptions);
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-            mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
-
-
         }
     }
 }
