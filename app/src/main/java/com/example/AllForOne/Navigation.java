@@ -38,7 +38,7 @@ public class Navigation extends AppCompatActivity {
         bchouse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Navigation.this, FindBcHousing.class));
+                startActivity(new Intent(Navigation.this, MapsActivity.class));
             }
         });
 
