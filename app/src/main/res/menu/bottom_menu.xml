@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_hospital"
+        android:enabled="true"
+        android:title="Hospital"
+        android:icon="@drawable/ic_baseline_local_hospital_24"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/action_shelter"
+        android:enabled="true"
+        android:title="Shelter"
+        android:icon="@drawable/ic_baseline_night_shelter_24"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/action_cheapFood"
+        android:enabled="true"
+        android:title="Cheap Food"
+        android:icon="@drawable/ic_baseline_restaurant_24"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/action_more"
+        android:enabled="true"
+        android:title="More options"
+        android:icon="@drawable/ic_baseline_more_24"
+        app:showAsAction="ifRoom"
+        />
+
+</menu>

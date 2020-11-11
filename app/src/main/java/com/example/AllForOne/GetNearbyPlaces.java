@@ -25,6 +25,10 @@ public class GetNearbyPlaces extends AsyncTask<Object, String, String> {
     }
     public String[][] getUniqueID(){ return uniqueID;}
 
+    public void cleanUniqueID(){
+        uniqueID = new String[200][200];
+    }
+
     @Override
     protected String doInBackground(Object... objects) {
 
