@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.AllForOne">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -14,6 +14,16 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.google.android.providers.gsf.permisson.READ_GSERVICES" />
 
+    <!-- Notificaciones, permisos -->
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- MAKE ALARMS RESTART ON REBOOT -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,16 +31,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FindShelters">
-        <activity android:name=".LifeGuard" android:label="@string/txtLifeGuardTitle"/>
-        <activity android:name=".FindFood" android:label="Find Food"/>
+
+        <activity
+            android:name=".LifeGuard"
+            android:label="@string/txtLifeGuardTitle" />
+        <activity
+            android:name=".FindFood"
+            android:label="Find Food" />
         <activity android:name=".PanicButtonAction" />
         <activity android:name=".FindHospital" />
         <activity android:name=".FindBcHousing" />
         <activity android:name=".FindShelter" />
         <activity android:name=".Navigation" />
         <activity android:name=".DisplayInfoActivity" />
-        <activity android:name=".SignIn" android:label="@string/btnSign"/>
-        <activity android:name=".Login" android:label="@string/btnLogin"/>
+        <activity
+            android:name=".SignIn"
+            android:label="@string/btnSign" />
+        <activity android:name=".Login" android:label="@string/btnLogin" />
+        <activity android:name=".RunAlarm" android:label="Control Alarm" />
         <activity android:name=".StartScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -57,6 +75,8 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        <receiver android:name=".ReceiverAlarm" />
+
     </application>
 
 </manifest>

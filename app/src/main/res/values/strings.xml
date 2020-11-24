@@ -32,4 +32,6 @@
     <string name="btnStartAlarm">Start Alarm</string>
     <string name="btnResetAlarm">Reset Alarm</string>
     <string name="txtLifeGuardTitle">Life Guard App</string>
+    <string name="imgButton">Button Image</string>
+
 </resources>
