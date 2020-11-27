@@ -33,5 +33,11 @@
     <string name="btnResetAlarm">Reset Alarm</string>
     <string name="txtLifeGuardTitle">Life Guard App</string>
     <string name="imgButton">Button Image</string>
-
+    <string name="btn_setting">Set the Emergency Number</string>
+    <string name="txt_Number">Enter your Emergency Number</string>
+    <string name="txt_num_hint">Only Enter Number ex)7777777777</string>
+    <string name="txt_confirm">The Emergency Message send to 911</string>
+    <string name="txt_consideration">Click the button When You Emergency</string>
+    <string name="btn_emergencyBtn">send emergency message</string>
+    <string name="title_activity_location_app">Map</string>
 </resources>
