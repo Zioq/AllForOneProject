@@ -53,6 +53,7 @@ public class Navigation extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Navigation.this, PanicButtonAction.class));
+                //startActivity(new Intent(Navigation.this, LocationApp.class));
             }
         });
 
