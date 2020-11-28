@@ -58,7 +58,7 @@ public class FindHospital extends FragmentActivity implements OnMapReadyCallback
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Places.initialize(FindHospital.this, "AIzaSyBBb5inzGlwH-L_crGgtBP1jWe9zu_URzA");
+        Places.initialize(FindHospital.this, getResources().getString(R.string.google_maps_key));
         placesClient = Places.createClient(this);
 
         super.onCreate(savedInstanceState);
@@ -139,13 +139,14 @@ public class FindHospital extends FragmentActivity implements OnMapReadyCallback
     }
 
     private String getUrl(double latitude, double longitude, String nearbyPlace) {
+
         StringBuilder googleURL = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
         googleURL.append("location=" + latitude + "," + longitude);
         //googleURL.append("location=" + "49.2827283" + "," + "-123.1207367");
         googleURL.append("&radius=" + ProximityRadius);
         googleURL.append("&type=" + nearbyPlace);
         googleURL.append("&sensor=true");
-        googleURL.append("&key=" + "AIzaSyBBb5inzGlwH-L_crGgtBP1jWe9zu_URzA");
+        googleURL.append("&key=" + getResources().getString(R.string.google_maps_key));
 
         Log.d("GoogleMapsActivity", "Url: " + googleURL.toString());
         return  googleURL.toString();
