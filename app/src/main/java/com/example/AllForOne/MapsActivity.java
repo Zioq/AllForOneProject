@@ -64,7 +64,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Places.initialize(MapsActivity.this, "AIzaSyBBb5inzGlwH-L_crGgtBP1jWe9zu_URzA");
+        Places.initialize(MapsActivity.this, getResources().getString(R.string.google_maps_key));
         placesClient = Places.createClient(this);
 
         super.onCreate(savedInstanceState);
@@ -185,7 +185,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         googleURL.append("&radius=" + ProximityRadius);
         googleURL.append("&type=" + nearbyPlace);
         googleURL.append("&sensor=true");
-        googleURL.append("&key=" + "AIzaSyBBb5inzGlwH-L_crGgtBP1jWe9zu_URzA");
+        googleURL.append("&key=" + getResources().getString(R.string.google_maps_key));
 
         Log.d("GoogleMapsActivity", "Url: " + googleURL.toString());
         return  googleURL.toString();
