@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">AllForOne</string>
+    <string name="app_name">All For One</string>
     <string name="title_activity_maps">Map</string>
     <string name="btnLogin">Login</string>
     <string name="btnContinue">Try it!</string>
     <string name="btnSign">Sign In</string>
     <string name="logo">logo image</string>
-    <string name="textNavi">Find Help</string>
+    <string name="textNavi">Try Demo</string>
     <string name="title_shelter">This is Shelter Page</string>
     <string name="title_bchousing">This is bcHousing page</string>
     <string name="title_hosipital">This is Hospital Page</string>
@@ -40,4 +40,5 @@
     <string name="txt_consideration">Click the button When You Emergency</string>
     <string name="btn_emergencyBtn">send emergency message</string>
     <string name="title_activity_location_app">Map</string>
+    <string name="bchousing_url">https://www.bchousing.org/housing-assistance/homelessness-services</string>
 </resources>

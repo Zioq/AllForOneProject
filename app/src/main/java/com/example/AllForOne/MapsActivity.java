@@ -123,6 +123,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         getNearbyFood.execute(transferData);
                         clicked = restaurants;
                         break;
+                    case R.id.action_more:
+                        startActivity(new Intent(MapsActivity.this, SignIn.class));
                 }
                 return false;
             }
