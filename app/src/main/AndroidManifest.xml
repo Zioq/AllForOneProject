@@ -60,8 +60,8 @@
         <activity android:name=".FindHospital" />
         <activity android:name=".FindBcHousing" />
         <activity android:name=".FindShelter" />
-        <activity android:name=".Navigation" />
-        <activity android:name=".DisplayInfoActivity" />
+        <activity android:name=".Navigation" android:label="Main Menu" />
+        <activity android:name=".DisplayInfoActivity"/>
         <activity
             android:name=".SignIn"
             android:label="@string/btnSign" />
@@ -69,9 +69,6 @@
             android:name=".Login"
             android:label="@string/btnLogin" />
         <activity android:name=".WeatherNotice" />
-        <activity
-            android:name=".Login"
-            android:label="@string/btnLogin" />
         <activity
             android:name=".RunAlarm"
             android:label="Control Alarm" />
