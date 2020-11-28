@@ -44,7 +44,7 @@ public class StartScreen extends AppCompatActivity {
         navi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(StartScreen.this, Navigation.class));
+                startActivity(new Intent(StartScreen.this, MapsActivity.class));
             }
         });
 

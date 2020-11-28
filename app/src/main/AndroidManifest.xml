@@ -58,10 +58,10 @@
             android:label="Find Food" />
         <activity android:name=".PanicButtonAction" />
         <activity android:name=".FindHospital" />
-        <activity android:name=".FindBcHousing" />
+        <activity android:name=".BcHousing" android:label="BC Housing Information"/>
         <activity android:name=".FindShelter" />
         <activity android:name=".Navigation" android:label="Main Menu" />
-        <activity android:name=".DisplayInfoActivity"/>
+        <activity android:name=".DisplayInfoActivity" android:label="Information"/>
         <activity
             android:name=".SignIn"
             android:label="@string/btnSign" />
