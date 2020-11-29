@@ -236,12 +236,12 @@ public class LifeGuard extends AppCompatActivity {
 
         Calendar now = Calendar.getInstance();
         now.add(Calendar.MINUTE, timer);
-        Date teenMinutesFromNow = now.getTime();
+        Date NewMinutesFromNow = now.getTime();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
 
-        mSetAlarm.setText("Your alarm is set to:\n"+dateFormat.format(teenMinutesFromNow));
+        mSetAlarm.setText("Your alarm is set to:\n"+dateFormat.format(NewMinutesFromNow));
 
-        now.setTime(teenMinutesFromNow);
+        now.setTime(NewMinutesFromNow);
 
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, ReceiverAlarm.class);
