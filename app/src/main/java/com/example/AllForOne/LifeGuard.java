@@ -42,6 +42,7 @@ public class LifeGuard extends AppCompatActivity {
     private long mTimeLeftInMillis;
     private long mEndTime;
     private int valueToAlarm;
+    private SharedPreferences prefs;
 
     private Calendar date;
 
@@ -96,7 +97,6 @@ public class LifeGuard extends AppCompatActivity {
                 resetTimer();
             }
         });
-
     }
 
 
@@ -107,9 +107,7 @@ public class LifeGuard extends AppCompatActivity {
         closeKeyboard();
     }
 
-
     private void startTimer() {
-
         mEndTime = System.currentTimeMillis() + mTimeLeftInMillis;
         mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
             @Override
@@ -139,7 +137,6 @@ public class LifeGuard extends AppCompatActivity {
         updateWatchInterface();
     }
     private void updateCountDownText() {
-
         int hours = (int) (mTimeLeftInMillis / 1000) / 3600;
         int minutes = (int) ((mTimeLeftInMillis / 1000) % 3600) / 60;
         int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
@@ -186,11 +183,11 @@ public class LifeGuard extends AppCompatActivity {
     }
 
 
-    //keep control if user rotare the screen
+    //keep countdown on screen
     @Override
     protected void onStop() {
         super.onStop();
-        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putLong("startTimeInMillis", mStartTimeInMillis);
         editor.putLong("millisLeft", mTimeLeftInMillis);
@@ -199,15 +196,12 @@ public class LifeGuard extends AppCompatActivity {
         editor.apply();
         if (mCountDownTimer != null) {
             mCountDownTimer.cancel();
-
         }
     }
     @Override
     protected void onStart() {
         super.onStart();
-
-        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
-
+        prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         mStartTimeInMillis = prefs.getLong("startTimeInMillis", 600000);
         mTimeLeftInMillis = prefs.getLong("millisLeft", mStartTimeInMillis);
         mTimerRunning = prefs.getBoolean("timerRunning", false);
@@ -231,18 +225,15 @@ public class LifeGuard extends AppCompatActivity {
     private void startAlarm() {
 
         // set alarm manager --- configuracion
-
-        int timer = valueToAlarm;
-
         Calendar now = Calendar.getInstance();
-        now.add(Calendar.MINUTE, timer);
-        Date teenMinutesFromNow = now.getTime();
+        now.setTimeInMillis(System.currentTimeMillis()+mTimeLeftInMillis);
+
+        Date NewMinutesFromNow = now.getTime();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
 
-        mSetAlarm.setText("Your alarm is set to:\n"+dateFormat.format(teenMinutesFromNow));
+        mSetAlarm.setText("Your alarm is set to:\n"+dateFormat.format(NewMinutesFromNow));
 
-        now.setTime(teenMinutesFromNow);
-
+        now.setTime(NewMinutesFromNow);
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, ReceiverAlarm.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
