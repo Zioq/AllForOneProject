@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textSize="28sp" />
 
     <TextView
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textSize="90sp"
         android:layout_above="@+id/current_temperature_field"/>
 
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textSize="72sp"/>
 
     <TextView
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/current_temperature_field"
         android:layout_centerHorizontal="true"
-        android:textColor="#FFFFFF"/>
+        android:textColor="#000000"/>
 
     <TextView
         android:id="@+id/pressure_field"
@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/humidity_field"
         android:layout_centerInParent="true"
-        android:textColor="#FFFFFF"/>
+        android:textColor="#000000"/>
 
     <TextView
         android:id="@+id/details_field"
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/pressure_field"
         android:layout_centerHorizontal="true"
-        android:textColor="#FFFFFF"/>
+        android:textColor="#000000"/>
 
     <TextView
         android:id="@+id/updated_field"
@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textSize="12sp"/>
 
     <TextView
@@ -74,7 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Please Check Today's Weather !"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold|italic" />
 
