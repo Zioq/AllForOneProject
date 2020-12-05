@@ -229,7 +229,7 @@ public class LifeGuard extends AppCompatActivity {
         now.setTimeInMillis(System.currentTimeMillis()+mTimeLeftInMillis);
 
         Date NewMinutesFromNow = now.getTime();
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
         mSetAlarm.setText("Your alarm is set to:\n"+dateFormat.format(NewMinutesFromNow));
 
