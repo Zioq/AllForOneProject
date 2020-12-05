@@ -92,7 +92,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                String hospital = "hospital", shelter = "shelter", restaurants = "cheap food";
+                String hospital = "hospital", shelter = "shelter", restaurants = "restaurant";
                 Object transferData[] = new Object[2];
 
                 switch ((item.getItemId())){
@@ -199,7 +199,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             markerPosition = getNearbyHospital.getUniqueID();
         } else if(clicked.equals("shelter")){
             markerPosition = getNearbyShelter.getUniqueID();
-        } else if(clicked.equals("cheap food")){
+        } else if(clicked.equals("restaurant")){
             markerPosition = getNearbyFood.getUniqueID();
         }
         String reference = marker.getTitle().toString();
