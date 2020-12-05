@@ -88,7 +88,7 @@ public class FindFood extends FragmentActivity implements OnMapReadyCallback
         //Initialize task location
         Task<Location> task = client.getLastLocation();
 
-        String food = "cheap food";
+        String food = "restaurant";
         Object transferData[] = new Object[2];
 
         //estaba aqui
