@@ -19,3 +19,42 @@ The security feature will allow users to send a message to security contact. Thi
 ## Description about the funcitons for our app
 
 ### App main
+![alt text](https://github.com/Zioq/AllForOneApp/blob/master/img/mainpage.png?raw=true) 
+### Trying function
+![alt text](https://github.com/Zioq/AllForOneApp/blob/master/img/Demoversion.png?raw=true) 
+### Register function 
+![alt text](https://github.com/Zioq/AllForOneApp/blob/master/img/Register.png?raw=true)
+### Check current weather function
+![alt text](https://github.com/Zioq/AllForOneApp/blob/master/img/Weather.png?raw=true)
+### Login function
+![alt text](https://github.com/Zioq/AllForOneApp/blob/master/img/login.png?raw=true)
+### Function in main menu
+![alt text](https://github.com/Zioq/AllForOneApp/blob/master/img/fullservice.png?raw=true)
+#### Finding BC housing
+![alt text](https://github.com/Zioq/AllForOneApp/blob/master/img/bchousing.png?raw=true)
+#### Finding shelters
+![alt text](https://github.com/Zioq/AllForOneApp/blob/master/img/findshelter.png?raw=true)
+#### Finding hospitals
+![alt text](https://github.com/Zioq/AllForOneApp/blob/master/img/findhospital.png?raw=true)
+#### Finding food places
+![alt text](https://github.com/Zioq/AllForOneApp/blob/master/img/foodplace.png?raw=true)
+#### Panic button
+![alt text](https://github.com/Zioq/AllForOneApp/blob/master/img/panicbutton.png?raw=true)
+#### Life guard button
+![alt text](https://github.com/Zioq/AllForOneApp/blob/master/img/alram.png?raw=true)
+
+## Conclusion
+Today, technology is available to everyone in the world, but there is still a high percentage of people who need help with information about where to live, where to eat, where to work. As developers, we believe it is important not to forget the most vulnerable people and their needs. Searching for help is not an easy task, so we created this app to help homeless people find it.
+The listed functions are simple and intuitive for the user because each function was researched by the team to create a functional and quality app for the homeless.
+Features such as Lifeguard or Panic Button are not present in other applications; therefore, it is a great advance to provide these features to the homeless or people who need them.
+
+## Contributor
+- JAEHYEON ROBERT HAN
+- JHONATAN ARANEDA
+- ISAIAS BAUTISTA
+- JUNGA AN
+Last updated date: Feb 10 2021
+
+
+
+
