@@ -64,7 +64,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Places.initialize(MapsActivity.this, "AIzaSyBBb5inzGlwH-L_crGgtBP1jWe9zu_URzA");
+        Places.initialize(MapsActivity.this, getResources().getString(R.string.google_maps_key));
         placesClient = Places.createClient(this);
 
         super.onCreate(savedInstanceState);
@@ -92,7 +92,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                String hospital = "hospital", shelter = "shelter", restaurants = "cheap food";
+                String hospital = "hospital", shelter = "shelter", restaurants = "restaurant";
                 Object transferData[] = new Object[2];
 
                 switch ((item.getItemId())){
@@ -123,6 +123,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         getNearbyFood.execute(transferData);
                         clicked = restaurants;
                         break;
+                    case R.id.action_more:
+                        startActivity(new Intent(MapsActivity.this, SignIn.class));
                 }
                 return false;
             }
@@ -183,7 +185,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         googleURL.append("&radius=" + ProximityRadius);
         googleURL.append("&type=" + nearbyPlace);
         googleURL.append("&sensor=true");
-        googleURL.append("&key=" + "AIzaSyBBb5inzGlwH-L_crGgtBP1jWe9zu_URzA");
+        googleURL.append("&key=" + getResources().getString(R.string.google_maps_key));
 
         Log.d("GoogleMapsActivity", "Url: " + googleURL.toString());
         return  googleURL.toString();
@@ -197,7 +199,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             markerPosition = getNearbyHospital.getUniqueID();
         } else if(clicked.equals("shelter")){
             markerPosition = getNearbyShelter.getUniqueID();
-        } else if(clicked.equals("cheap food")){
+        } else if(clicked.equals("restaurant")){
             markerPosition = getNearbyFood.getUniqueID();
         }
         String reference = marker.getTitle().toString();

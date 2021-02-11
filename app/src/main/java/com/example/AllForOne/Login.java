@@ -48,7 +48,7 @@ public class Login extends AppCompatActivity {
                         cursor.moveToNext();
                         Toast.makeText(getApplicationContext(),"Login Success!",Toast.LENGTH_LONG).show();
 
-                        startActivity(new Intent(Login.this, Navigation.class));
+                        startActivity(new Intent(Login.this, WeatherNotice.class));
                     } else {
                         Toast.makeText(getApplicationContext(),"Check Your ID and Password!",Toast.LENGTH_LONG).show();
                     }
